@@ -6,7 +6,7 @@
 	row-gap: 32px;
 	column-gap: 20px;
 }
-.movies-card-list__load{
+.movies-card-list__container{
 	display: flex;
 	flex-direction: column;
 	align-items: center;

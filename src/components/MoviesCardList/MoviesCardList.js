@@ -10,7 +10,7 @@ export default function MoviesCardList({sampleItems}) {
           <MoviesCard key={index} />
         ))}
       </section>
-      <div className="movies-card-list__load">
+      <div className="movies-card-list__container">
       <button className="movies-card-list__button">Еще</button>
       </div>
     </>
