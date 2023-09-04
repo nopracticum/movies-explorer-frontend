@@ -1,0 +1,42 @@
+.navigation {
+	background-color: #F5F5F5;
+	height: 66px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navigation__container {
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	gap: 40px;
+}
+
+.navigation__link {
+	color: black;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 16px; /* 123.077% */
+	text-decoration-line: underline;
+	
+}
+
+.navigation__li {
+	list-style: none;
+}
+
+.navigation__link:hover {
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 425px) {
+	.navigation__container {
+		gap: 24px;
+	}
+	
+	.navigation__link {
+		font-size: 11px;
+	}
+}

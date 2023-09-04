@@ -1,0 +1,9 @@
+.main {
+    width: 100%;
+}
+@media (max-width:320px) {
+    .main {
+        padding: 0;
+        text-align: center;
+    }
+}
