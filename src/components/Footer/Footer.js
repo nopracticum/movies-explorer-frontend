@@ -10,7 +10,7 @@ export default function Footer() {
         Учебный проект Яндекс.Практикум х BeatFilm.
       </p>
       <div className="footer__container">
-        <p className="footer__copyright">&#64; {new Date().getFullYear()}</p>
+        <p className="footer__copyright">© {new Date().getFullYear()}</p>
         <nav className="footer__nav">
           <a
             className="footer__link"
