@@ -17,15 +17,15 @@ export default function MoviesCard() {
 		(<button className="card__btn card__like_rm" type="submit">&#x2717;</button>)
 
   return (
-    <div className="card">
-      <img src={testImg} alt="скриншот из фильма" class="card-image" />
-      <div class="card-header">
-				<div className="card__header-wrapper">
-					<h2 class="card-title">33 слова о дизайне</h2>
-					{button}
-				</div>
-				<span className="card-subtitle">1ч42м</span>
-      </div>
-    </div>
+		<div className="card">
+		<img src={testImg} alt="скриншот из фильма" class="card-image" />
+		<div class="card-header">
+					<div className="card__header-wrapper">
+						<h2 class="card-title">33 слова о дизайне</h2>
+						{button}
+					</div>
+					<span className="card-subtitle">1ч42м</span>
+		</div>
+		</div>
   );
 }
