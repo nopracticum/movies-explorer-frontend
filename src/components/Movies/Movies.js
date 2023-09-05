@@ -5,7 +5,7 @@ function Movies() {
   return (
     <main className="main">
       <SearchForm />
-      <MoviesCardList sampleItems={6} />
+      <MoviesCardList sampleItems={5} />
     </main>
   );
 }

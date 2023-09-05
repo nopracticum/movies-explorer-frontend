@@ -22,7 +22,7 @@
 }
 @media (max-width: 320px) {
   .movies {
-    padding: 90px 10px 0 10px;
+    padding: 90px 0 0;
   }
   .movies__wrapper {
     row-gap: 5px;

@@ -45,11 +45,11 @@
 }
 
 input:checked + .toggle__slider {
-  background-color: #EBEBEB;
+  background-color: #2BE080;
 }
 
 input:checked + .toggle__slider::before {
-  background-color: #2BE080;
+  background-color: #EBEBEB;
 }
 
 input:checked + .toggle__slider:before {

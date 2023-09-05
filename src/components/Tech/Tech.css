@@ -65,7 +65,8 @@
 
 	.tech__subtitle {
 		font-size: 12px;
-		padding-top: 22px;
+		padding-top: 18px;
+		width: 400px;
 	}
 
 	.tech__stack {
@@ -84,15 +85,22 @@
 		background-color: white;
 		padding: 70px 18px;
 	}
-
 	.tech__title {
+		text-align: center;
 		font-size: 30px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -1.2px;
 		padding-top: 60px;
 	}
 
 	.tech__subtitle {
 		font-size: 11px;
-		width: 292px;
+		width: 255px;
+		line-height: 16px; /* 145.455% */
+		letter-spacing: -0.44px;
+		padding-top: 20px;
 	}
 	.tech__stack {
 		padding: 50px 50px 0;

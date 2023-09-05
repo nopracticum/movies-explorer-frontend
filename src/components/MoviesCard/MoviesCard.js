@@ -18,13 +18,13 @@ export default function MoviesCard() {
 
   return (
     <div className="card">
-      <img src={testImg} alt="" class="card__image" />
-      <div class="card__header">
+      <img src={testImg} alt="скриншот из фильма" class="card-image" />
+      <div class="card-header">
 				<div className="card__header-wrapper">
-					<h2 class="card__title">33 слова о дизайне</h2>
+					<h2 class="card-title">33 слова о дизайне</h2>
 					{button}
 				</div>
-				<span className="card__subtitle">1ч42м</span>
+				<span className="card-subtitle">1ч42м</span>
       </div>
     </div>
   );

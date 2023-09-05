@@ -15,7 +15,9 @@
 .register__greeting {
     margin: 0;
     font-size: 24px;
+    font-style: normal;
     font-weight: 500;
+    line-height: normal;
     margin: 35px auto 42px auto;
 }
 .register__label {
@@ -24,20 +26,32 @@
     font-weight: 400;
     margin-bottom: 10px;
 }
+.register__label-email{
+    margin-top: 10px;
+}
+
+.register__label-pass{
+    margin-top: 10px;
+}
+
 .register__submit {
     background: #FF6838;
     color: #fff;
     border-radius: 3px;
     border: 0;
-    margin-top: 70px;
+    margin-top: 68px;
     padding: 0;
     width: 396px;
     height: 45px;
     font-size: 14px;
+    font-style: normal;
     font-weight: 500;
+    line-height: normal;
 }
 .register__input {
     border-radius: 8px;
+    padding: 0;
+    margin: 0;
     background: #F9F9F9;
     border: 0;
     padding: 15px;
@@ -58,7 +72,7 @@
     color: #FF6838;
 }
 .register__error {
-    margin: 10px 0 0;
+    margin: 12px 0 0;
     color: #EE3465;
     font-size: 10px;
 }
@@ -70,8 +84,12 @@
     }
 
     .register__greeting {
-        margin-top: 40px;
+        margin-top: 38px;
         margin-bottom: 40px;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
     }
 }
 
@@ -86,7 +104,7 @@
         align-items: center;
     }
     .register__greeting {
-        margin-top: 50px;
+        margin-top: 48px;
         margin-bottom: 80px;
     }
     .register__input {
@@ -103,7 +121,7 @@
     }
     .register__submit {
         font-size: 12px;
-        margin-top: 160px;
+        margin-top: 158px;
         width: 259px;
     }
     .register__question {

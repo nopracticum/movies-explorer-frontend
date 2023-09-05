@@ -23,7 +23,7 @@ function Register() {
             <span className="register__error"></span>
           </div>
           <div className="register__field">
-            <label className="register__label">E-mail</label>
+            <label className="register__label register__label-email">E-mail</label>
             <input
               name="email"
               type="email"
@@ -35,7 +35,7 @@ function Register() {
             <span className="register__error"></span>
           </div>
           <div className="register__field">
-            <label className="register__label">Пароль</label>
+            <label className="register__label register__label-pass">Пароль</label>
             <input
               name="password"
               type="password"

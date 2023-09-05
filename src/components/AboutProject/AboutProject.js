@@ -37,10 +37,10 @@ export default function AboutProject() {
       </div>
       <div className="about__timeframe">
         <div className="about__timeframe-block about__timeframe-block_first-week span">
-          <p className="about__timeframe-text grey-color">Back-end</p>
+          <p className="about__timeframe-text about__timeframe-discription">Back-end</p>
         </div>
         <div className="about__timeframe-block about__timeframe-block_other-weeks span">
-          <p className="about__timeframe-text grey-color">Front-end</p>
+          <p className="about__timeframe-text about__timeframe-discription">Front-end</p>
         </div>
       </div>
     </section>

@@ -7,9 +7,11 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 export default function SavedMovies() {
 	return(
+        <main className="main">
 		<section className="movies">
 			<SearchForm />
-			<MoviesCardList sampleItems={4}/>
+			<MoviesCardList sampleItems={3}/>
 		</section>
+        </main>
 	);
 }

@@ -10,11 +10,11 @@ function Login() {
         <h1 className="login__greeting">Рады видеть!</h1>
         <form action="#" className="login__form">
           <div className="login__field">
-            <label className="login__label">Имя</label>
+            <label className="login__label">E-mail</label>
             <input
               name="name"
               type="text"
-              placeholder="Имя"
+              placeholder="pochta@yandex.ru"
               className="login__input"
               minLength={2}
               maxLength={20}

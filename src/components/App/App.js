@@ -10,6 +10,7 @@ import Register from "../Register/Register";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import NotFound from "../NotFound/NotFound";
 import "./App.css";
+
 function App() {
   const location = useLocation();
   useEffect(()=> {
@@ -28,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/saved-movies" element={<SavedMovies/>}/>
+        <Route path="/saved-movies" element={<SavedMovies />}/>
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<Register />} />
         <Route path="/signin" element={<Login />} />

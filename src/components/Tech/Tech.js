@@ -20,7 +20,7 @@ export default function Tech() {
 					<div className="tech__stack-tech">React</div>
 					<div className="tech__stack-tech">Git</div>
 					<div className="tech__stack-tech">Express.js</div>
-					<div className="tech__stack-tech">MongoDB</div>
+					<div className="tech__stack-tech">mongoDB</div>
 				</div>
       </div>
     </section>

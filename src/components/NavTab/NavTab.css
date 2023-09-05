@@ -27,7 +27,7 @@
         display: flex;
         flex-flow: column;
         justify-content: space-between;
-        padding: 100px 0;
+        padding: 160px 0 0;
         position: absolute;
         top: -6px;
         right: 0;
@@ -39,9 +39,10 @@
     }
 
     .menu__space{
-        margin-top: 250px;
+        margin-top: 500px;
     }
     .menu__button_account {
+        margin: 0 0 300px;
         border-radius: 20px;
         font-size: 14px;
         background-color: #F9F9F9;
@@ -55,10 +56,10 @@
     }
 
     .menu__exit {
-        width: 22px;
+        width: 30px;
         z-index: 2;
         position: absolute;
-        top: 22.44px;
+        top: 30px;
         right: 22.44px;
         cursor: pointer;
     }
@@ -91,6 +92,11 @@
 @media (max-width: 520px) {
     .menu__wrapper {
         max-width: 320px;
+        padding: 145px 0 0;
+    }
+
+    .menu__selection {
+        row-gap: 10px;
     }
     .menu__exit {
         width: 33px;
@@ -99,6 +105,20 @@
     }
 
     .menu__selection_account {
-        margin-bottom: 48px;
+        margin-bottom: 500px;
     }
+    .menu__button_account {
+        margin: 0 0 0px;
+        border-radius: 20px;
+        font-size: 14px;
+        background-color: #F9F9F9;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        text-decoration: none;
+        color: black;
+    }
+
 }

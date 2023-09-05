@@ -7,8 +7,8 @@
 .about__text-container {
 	display: flex;
 	flex-direction: row;
-	gap: 40px;
-	padding: 70px 0 110px;
+	gap: 55px;
+	padding: 72px 0 110px;
 }
 
 .block {
@@ -70,8 +70,9 @@
 	background-color: inherit;
 }
 
-.about__timeframe-text.grey-color {
+.about__timeframe-discription{
 	color: #A0A0A0;
+	padding-top: 14px;
 }
 
 @media screen and (max-width: 768px) {
@@ -95,7 +96,7 @@
 
 @media screen and (max-width: 425px) {
 	.about {
-		padding: 70px 18px;
+		padding: 70px 18px 60px;
 	}
 
 	.about__text-container {
@@ -106,14 +107,27 @@
 
 	.block__title {
 		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: -0.72px;
 		padding-bottom: 16px;
+		text-align: left;
 	}
 
 	.block__text{
 		font-size: 11px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 16px; /* 145.455% */
+		text-align: left;
 	}
 
 	.about__timeframe-text {
 		font-size: 11px;
+	}
+
+	.about__timeframe-discription{
+		padding-top: 0;
 	}
 }

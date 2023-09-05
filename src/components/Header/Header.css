@@ -13,6 +13,7 @@
 }
 
 .header__selection {
+    padding-left: 60px;
     display: grid;
     grid-column-gap: 16px;
     grid-auto-flow: column;
@@ -118,7 +119,11 @@
 }
 @media (max-width: 320px) {
     .header__container {
-        padding: 24px 14px;
+        padding: 18px 14px;
+    }
+
+    .header__burger {
+        max-width: 40px;
     }
     .header__auth {
         font-size: 10px;
