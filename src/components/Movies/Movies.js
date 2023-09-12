@@ -1,12 +1,96 @@
-import SearchForm from "../SearchForm/SearchForm";
-import MoviesCardList from "../MoviesCardList/MoviesCardList";
+import React, { useContext, useEffect } from "react";
 
-function Movies() {
+import "./Movies.css";
+import SearchForm from "./SearchForm/SearchForm";
+import MoviesCardList from "../General/MoviesCardList/MoviesCardList";
+import Header from "../General/Header/Header";
+import Footer from "../General/Footer/Footer";
+import Preloader from "../Preloader/Preloader";
+import { PreloaderContext } from "../../contexts/PreloaderContext";
+import { MovieContext } from "../../contexts/MovieContext";
+import { SearchContext } from "../../contexts/SearchContext";
+import getAllMovies from "../../utils/MoviesApi";
+
+
+function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage}) {
+  const {isActivePreloader, setStatePreloader} = useContext(PreloaderContext);
+  const {movies, downloadMovies} = useContext(MovieContext);
+  const {searchTermMovies, setSearchTermMovies} = useContext(SearchContext);
+  const {switcherMode, setSwitcherMode} = useContext(SearchContext);
+ 
+
+  useEffect(() => {
+    if (downloadMovies()){
+      handleSearch();
+    }
+  }, []);
+  
+  async function handleSearch() {
+    const optionsData = {
+      searchQuery: searchTermMovies,
+      switcherMode: switcherMode,
+    };
+
+    localStorage.setItem(
+      "options-beatfilm-movies",
+      JSON.stringify(optionsData)
+    );
+
+    const storedMovies = JSON.parse(localStorage.getItem("beatfilm-movies"));
+
+    setStatePreloader(true);
+
+    if (!storedMovies) {
+
+      getAllMovies()
+        .then((data) => {
+          localStorage.setItem("beatfilm-movies", JSON.stringify(data));
+
+          searchFilter(switcherMode, "beatfilm-movies");
+        })
+        .catch((error) => {
+          setErrorMessage(error.message);
+        })
+        .finally(() => {
+          setStatePreloader(false);
+        });
+    } else {
+      try {
+        searchFilter(switcherMode, "beatfilm-movies");
+      } catch (error) {
+        setErrorMessage(error.message);
+      } finally {
+        setStatePreloader(false);
+      }
+    }
+  }
+
   return (
-    <main className="main">
-      <SearchForm />
-      <MoviesCardList sampleItems={5} />
-    </main>
+    <div className="page__container">
+      <Header onClickMenuButton={onMenuButtonClick}></Header>
+      <main className="content">
+        <section className="movies">
+          <SearchForm 
+            onSearch={handleSearch}
+            errorMessage={errorMessage}
+            setErrorMessage={setErrorMessage}
+            setSwitcherMode={setSwitcherMode}
+            switcherMode={switcherMode}
+            setSearchQuery={setSearchTermMovies}
+            searchQuery={searchTermMovies}
+            localStorageName={"options-beatfilm-movies"}
+            isSaved={false}
+          />
+          {!isActivePreloader && <MoviesCardList
+            movies={movies}
+            isActive={isActivePreloader}
+            loadMoreButtomMove={true}
+          />}
+          {isActivePreloader && <Preloader/>}
+        </section>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

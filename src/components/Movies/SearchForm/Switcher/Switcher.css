@@ -1,0 +1,66 @@
+.switcher {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.switcher .switcher__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switcher:focus-within .switcher__slider {
+    outline: 1.5px solid var(--button-color-grey);
+}
+
+.switcher__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--button-color-grey);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.switcher__slider:before {
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 2px;
+    background-color: var(--disabled-switcher-ball);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.switcher__input:checked+.switcher__slider {
+    background-color: var(--background-active-switcher);
+}
+
+.switcher__input:checked+.switcher__slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+
+@media screen and (max-width: 690px) {
+    .switcher  {
+        width: 39px;
+        height: 14px;
+    }
+
+    .switcher__slider:before {
+        width: 11px;
+        height: 11px;
+    }
+}

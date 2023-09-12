@@ -1,17 +1,35 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./NotFound.css";
 
-function NotFound() {
+function NotFound({isLoggedIn}) {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    //navigate(-1); // Перенаправляем на предыдущую страницу
+    if (isLoggedIn) {
+      navigate('/movies');
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
-    <main>
-      <section className="not-found">
-        <h1 className="not-found__title">404</h1>
-        <p className="not-found__descrintion">Страница не найдена</p>
-        <Link to="/" className="not-found__button button-opacity">
-          Назад
-        </Link>
-      </section>
-    </main>
+    <div className="page__container">
+      <main className="content content_not-found">
+        <section className="not-found">
+          <h1 className="not-found__header">404</h1>
+          <p className="not-found__subtitle">Страница не найдена</p>
+          <button
+            className="not-found__back-link link"
+            onClick={handleGoBack}
+          >
+            Назад
+          </button>
+        </section>
+      </main>
+    </div>
   );
 }
 

@@ -1,0 +1,30 @@
+.header__buttons-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header__nav-links-container {
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    gap: 16px;
+    padding-left: 40%;
+}
+
+.header__nav-links_weight {
+    font-weight: 500;
+}
+
+.header__nav-links {
+    color: var(--text-color-black);
+}
+
+.header__saved-movies {
+    color: var(--text-color-black);
+}
+
