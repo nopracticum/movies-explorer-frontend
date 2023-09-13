@@ -17,7 +17,7 @@
 }
 
 .header__nav-links_weight {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .header__nav-links {
@@ -27,4 +27,3 @@
 .header__saved-movies {
     color: var(--text-color-black);
 }
-
