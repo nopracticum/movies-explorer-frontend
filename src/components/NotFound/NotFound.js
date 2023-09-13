@@ -3,17 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import "./NotFound.css";
 
-function NotFound({isLoggedIn}) {
+function NotFound() {
   const navigate = useNavigate();
 
-  const handleGoBack = () => {
-    navigate(-1);
-    if (isLoggedIn) {
-      navigate('/movies');
-    } else {
-      navigate('/');
-    }
-  };
+  const handleGoBack = () => navigate(-1);
 
   return (
     <div className="page__container">
