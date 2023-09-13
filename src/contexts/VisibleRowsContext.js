@@ -21,7 +21,8 @@ export const VisibleRowsProvider = ({ children }) => {
     if (window.innerWidth >= 1280) return { columns: 4, rows: 4 };
     if (window.innerWidth >= 1028) return { columns: 3, rows: 4 };
     if (window.innerWidth >= 768) return { columns: 2, rows: 4 };
-    return { columns: 2, rows: 5 };
+    if (window.innerWidth >= 480) return { columns: 1, rows: 5 };
+    return { columns: 1, rows: 5 };
   };
 
   useEffect(() => {

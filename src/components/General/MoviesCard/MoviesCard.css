@@ -83,7 +83,8 @@
 }
 
 .movies-card__favorites-btn.remove-btn{
-    background-color: #2BE080;
+    background-image: url(../../../images/exit.svg);
+    background-size: 16px;
 }
 
 .movies-card__favorites-btn.active{

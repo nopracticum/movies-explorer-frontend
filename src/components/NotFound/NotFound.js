@@ -7,7 +7,7 @@ function NotFound({isLoggedIn}) {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    //navigate(-1); // Перенаправляем на предыдущую страницу
+    navigate(-1);
     if (isLoggedIn) {
       navigate('/movies');
     } else {
