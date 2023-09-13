@@ -1,6 +1,6 @@
 const MENU_ICON_SCREEN_WIDTH = 769;
 
-const BASE_URL = 'api.nomoremoviesexplorer.nomoredomainsicu.ru';
+const BASE_URL = 'https://api.nomoremoviesexplorer.nomoredomainsicu.ru';
 
 const ERROR_MESSAGE_SEARCH_MOVIES_API = "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.";
 const ERROR_MESSAGE_NOT_FOUND = "Ничего не найдено.";
