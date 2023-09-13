@@ -108,6 +108,7 @@ class Api {
   }
 
   login(userData) {
+    console.log(`${this.baseUrl}/signin`)
     return fetch(`${this.baseUrl}/signin`, {
       headers: this.headers,
       method: "POST",
