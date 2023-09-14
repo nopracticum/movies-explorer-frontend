@@ -23,13 +23,14 @@ import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 import mainApi from "../../utils/MainApi";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const { addMovieList, addSavedMovieList } =
     useContext(MovieContext);
   const { searchTermMovies, searchTermSavedMovies } = useContext(SearchContext);
   const { setCurrentUser } = useContext(CurrentUserContext);
+  const loggedIn = Boolean(localStorage.getItem("token"));
 
   useEffect(() => {
     handleCheckToken();
@@ -40,7 +41,7 @@ function App() {
   };
 
   const handleSetLoggedIn = (value) => {
-    setLoggedIn(value);
+    // setLoggedIn(value);
   };
 
   const closeAllPopups = () => {
@@ -55,14 +56,14 @@ function App() {
         .getUserInfo(jwt)
         .then((userData) => {
           setCurrentUser(userData);
-          setLoggedIn(true);
+          // setLoggedIn(true);
         })
         .catch((error) => {
           console.log(error);
         })
         .finally(() => {});
     } else {
-      setLoggedIn(false);
+      // setLoggedIn(false);
     }
   }
 

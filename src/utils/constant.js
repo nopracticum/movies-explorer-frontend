@@ -11,6 +11,26 @@ const SHORT_MOVIE_DURATION = 40;
 
 const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
+const SCREEN_WIDTH = {
+	LARGE: window.innerWidth >= 1280,
+	TABLET: window.innerWidth >= 1028,
+	TABLET_SMALL: window.innerWidth >= 768,
+	MOBILE: window.innerWidth >= 480,
+}
+
+const ADD_MORE_CARDS = {
+	FOUR: 4,
+	THREE: 3,
+	TWO: 2,
+}
+
+const CARDS_AMMOUNT = {
+	LARGE: 16,
+	MEDIUM: 12,
+	SMALL: 8,
+	X_SMALL: 5,
+}
+
 module.exports = {
   MENU_ICON_SCREEN_WIDTH,
   BASE_URL,
@@ -21,4 +41,7 @@ module.exports = {
   ERROR_MESSAGE_INVALID_EMAIL,
   SUCCESS_MESSAGE_UPDATE_PROFILE,
   EMAIL_REGEX,
+  SCREEN_WIDTH,
+  ADD_MORE_CARDS,
+  CARDS_AMMOUNT
 };

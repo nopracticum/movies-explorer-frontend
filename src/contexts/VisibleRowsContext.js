@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { ADD_MORE_CARDS, CARDS_AMMOUNT, SCREEN_WIDTH } from "../utils/constant";
+
 
 export const VisibleRowsContext = createContext();
 
@@ -18,10 +20,10 @@ export const VisibleRowsProvider = ({ children }) => {
   };
 
   const calculateStartColumnsAndRowsCount = () => {
-    if (window.innerWidth >= 1280) return { columns: 4, rows: 4 };
-    if (window.innerWidth >= 1028) return { columns: 3, rows: 4 };
-    if (window.innerWidth >= 768) return { columns: 2, rows: 4 };
-    if (window.innerWidth >= 480) return { columns: 1, rows: 5 };
+    if (SCREEN_WIDTH.LARGE) return { columns: 4, rows: 4 };
+    if (SCREEN_WIDTH.TABLET) return { columns: 3, rows: 4 };
+    if (SCREEN_WIDTH.TABLET_SMALL) return { columns: 2, rows: 4 };
+    if (SCREEN_WIDTH.MOBILE) return { columns: 2, rows: 2.5 };
     return { columns: 1, rows: 5 };
   };
 
