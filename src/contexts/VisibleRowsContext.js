@@ -49,7 +49,7 @@ export const VisibleRowsProvider = ({ children }) => {
 
   const addRows = () => {
     const pathname = location.pathname;
-    if (pathname === "/movies") setVisibleRows((prevRows) => prevRows + 1);
+    if (pathname === "/movies") setVisibleRows((prevRows) => prevRows + 1 );
     else {
       setVisibleRowsSaved((prevRows) => prevRows + 1);
     }

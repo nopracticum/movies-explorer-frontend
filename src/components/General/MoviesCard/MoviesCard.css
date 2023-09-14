@@ -85,7 +85,9 @@
 .movies-card__favorites-btn.remove-btn{
     background-image: url(../../../images/exit.svg);
     background-size: 16px;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
 }
+
 
 .movies-card__favorites-btn.active{
     background-color: #2BE080;
