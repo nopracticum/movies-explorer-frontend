@@ -23,7 +23,6 @@ export const MovieProvider = ({ children }) => {
       mainApi
         .getMovieList()
         .then((movieList) => {
-          // Формируем новый массив с объектами фильмов
           const newMovies = movieList.map((movie) => ({
             duration: movie.duration,
             trailerLink: movie.trailerLink,
@@ -45,25 +44,21 @@ export const MovieProvider = ({ children }) => {
     }
   }
 
-  //вернет true если не найдено локальной копии отфильтрованных фильмов, но есть копия поискового запроса
-  //значит сделать поиск
+ 
   function downloadMovies() {
     const moviesLocalCopy =
       JSON.parse(localStorage.getItem("sorted-beatfilm-movies")) || [];
-
-    //если локальная копия не была найдена
     if (moviesLocalCopy.length === 0) {
       const optionsLocalCopy = JSON.parse(
         localStorage.getItem("options-beatfilm-movies")
       );
-      //если ранее уже был запрос на поиск фильмов
       if (optionsLocalCopy) {
         if (!JSON.parse(localStorage.getItem("beatfilm-movies"))) {
           getAllMovies()
             .then((data) => {
-              // Сохраняем данные в localStorage
+
               localStorage.setItem("beatfilm-movies", JSON.stringify(data));
-              //возвращаем true для поиска фильмов
+
               return true;
             })
             .catch((error) => {
@@ -89,11 +84,11 @@ export const MovieProvider = ({ children }) => {
   }, []);
 
   const addSavedMovie = (movieId) => {
-    // Получаем данные из localStorage через промис
+
     Promise.resolve(localStorage.getItem("beatfilm-movies"))
       .then((moviesData) => JSON.parse(moviesData))
       .then((mov) => {
-        // Выполняем поиск нужного фильма
+
         const movie = mov.find((movie) => movie.id === movieId);
 
         mainApi

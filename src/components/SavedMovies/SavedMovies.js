@@ -35,7 +35,6 @@ function SavedMovies({ onRowsCounter, rows, onMenuButtonClick, errorMessage, set
     } catch (error) {
       setErrorMessage(error.message);
     } finally {
-      // Скрыть прелоадер после завершения поиска
       setStatePreloader(false);
     }
   }

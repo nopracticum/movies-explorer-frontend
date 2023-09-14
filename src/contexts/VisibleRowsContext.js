@@ -66,8 +66,8 @@ export const VisibleRowsProvider = ({ children }) => {
   };
 
   const resetRows = () => {
-    setVisibleRows(2);
-    setVisibleRowsSaved(2);
+    setVisibleRows(0);
+    setVisibleRowsSaved(0);
   };
 
   return (
@@ -80,7 +80,7 @@ export const VisibleRowsProvider = ({ children }) => {
         cardCount,
         setCardCount,
         calculateStartColumnsAndRowsCount,
-        resetVisibleRowsContext
+        resetVisibleRowsContext,
       }}
     >
       {children}
