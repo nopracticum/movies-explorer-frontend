@@ -66,8 +66,8 @@ export const VisibleRowsProvider = ({ children }) => {
   };
 
   const resetRows = () => {
-    setVisibleRows(0);
-    setVisibleRowsSaved(0);
+    setVisibleRows(2);
+    setVisibleRowsSaved(2);
   };
 
   return (
