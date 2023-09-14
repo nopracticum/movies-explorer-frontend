@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import "./Movies.css";
 import SearchForm from "./SearchForm/SearchForm";
@@ -13,6 +13,7 @@ import getAllMovies from "../../utils/MoviesApi";
 
 
 function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage}) {
+  const [ isFetching, setIsFetching ] = useState(false);
   const {isActivePreloader, setStatePreloader} = useContext(PreloaderContext);
   const {movies, downloadMovies} = useContext(MovieContext);
   const {searchTermMovies, setSearchTermMovies} = useContext(SearchContext);
@@ -42,6 +43,8 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
 
     if (!storedMovies) {
 
+      setIsFetching(true);
+
       getAllMovies()
         .then((data) => {
           localStorage.setItem("beatfilm-movies", JSON.stringify(data));
@@ -53,6 +56,8 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
         })
         .finally(() => {
           setStatePreloader(false);
+          setIsFetching(false);
+
         });
     } else {
       try {
@@ -80,6 +85,7 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
             searchQuery={searchTermMovies}
             localStorageName={"options-beatfilm-movies"}
             isSaved={false}
+            disabled={ isFetching }
           />
           {!isActivePreloader && <MoviesCardList
             movies={movies}

@@ -15,7 +15,8 @@ function SearchForm({
   searchQuery,
   setSearchQuery,
   localStorageName,
-  isSaved
+  isSaved,
+  disabled,
 }) {
   const [errorMessageNotFound, setErrorMessageNotFound] = useState("");
   const location = useLocation();
@@ -84,6 +85,7 @@ function SearchForm({
             value={searchQuery}
             required
             onChange={handleChangeInput}
+            disabled={ disabled }
           ></input>
           <button type="submit" className="search-form__search-btn link">
           <img className="search-form__icon" src={logo} alt="поиск"/>
