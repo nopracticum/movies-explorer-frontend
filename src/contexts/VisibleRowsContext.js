@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { ADD_MORE_CARDS, CARDS_AMMOUNT, SCREEN_WIDTH } from "../utils/constant";
+import { SCREEN_WIDTH } from "../utils/constant";
 
 
 export const VisibleRowsContext = createContext();
@@ -24,8 +24,9 @@ export const VisibleRowsProvider = ({ children }) => {
     if (SCREEN_WIDTH.TABLET) return { columns: 3, rows: 4 };
     if (SCREEN_WIDTH.TABLET_SMALL) return { columns: 2, rows: 4 };
     if (SCREEN_WIDTH.MOBILE) return { columns: 2, rows: 2.5 };
-    return { columns: 1, rows: 5 };
+    return { columns: 2, rows: 2.5 };
   };
+
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -66,8 +67,8 @@ export const VisibleRowsProvider = ({ children }) => {
   };
 
   const resetRows = () => {
-    setVisibleRows(2);
-    setVisibleRowsSaved(2);
+    setVisibleRows(0);
+    setVisibleRowsSaved(0);
   };
 
   return (
@@ -81,6 +82,7 @@ export const VisibleRowsProvider = ({ children }) => {
         setCardCount,
         calculateStartColumnsAndRowsCount,
         resetVisibleRowsContext,
+        resetRows
       }}
     >
       {children}

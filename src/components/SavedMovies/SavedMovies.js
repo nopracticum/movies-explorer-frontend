@@ -19,6 +19,7 @@ function SavedMovies({ onRowsCounter, rows, onMenuButtonClick, errorMessage, set
   useEffect(() => {
     downloadSavedMovies();
   }, []);
+  
 
   function handleSearch() {
     const optionsData = {

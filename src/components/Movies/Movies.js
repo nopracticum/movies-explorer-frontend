@@ -9,6 +9,7 @@ import Preloader from "../Preloader/Preloader";
 import { PreloaderContext } from "../../contexts/PreloaderContext";
 import { MovieContext } from "../../contexts/MovieContext";
 import { SearchContext } from "../../contexts/SearchContext";
+import { VisibleRowsContext } from "../../contexts/VisibleRowsContext";
 import getAllMovies from "../../utils/MoviesApi";
 
 
@@ -18,7 +19,7 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
   const {movies, downloadMovies} = useContext(MovieContext);
   const {searchTermMovies, setSearchTermMovies} = useContext(SearchContext);
   const {switcherMode, setSwitcherMode} = useContext(SearchContext);
- 
+  const {resetRows} = useContext(VisibleRowsContext);
 
   useEffect(() => {
     if (downloadMovies()){
@@ -42,13 +43,11 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
     setStatePreloader(true);
 
     if (!storedMovies) {
-
       setIsFetching(true);
-
       getAllMovies()
         .then((data) => {
           localStorage.setItem("beatfilm-movies", JSON.stringify(data));
-
+          
           searchFilter(switcherMode, "beatfilm-movies");
         })
         .catch((error) => {
@@ -57,7 +56,7 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
         .finally(() => {
           setStatePreloader(false);
           setIsFetching(false);
-
+          resetRows()
         });
     } else {
       try {

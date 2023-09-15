@@ -121,10 +121,8 @@ export const MovieProvider = ({ children }) => {
               },
             ];
 
-            //сохраним в контекст
             setSavedMovies(updatedSavedMovies);
 
-            //сохраняем в localStorage
             localStorage.setItem(
               "saved-movies",
               JSON.stringify(updatedSavedMovies)
@@ -138,11 +136,9 @@ export const MovieProvider = ({ children }) => {
   };
 
   const addMovieList = (moviesList) => {
-    // Создаем временную переменную для сбора новых значений movies
     let newMoviesList = [];
 
     moviesList.forEach((movie) => {
-      // Добавляем объект во временный массив newMoviesList
       newMoviesList.push({
         duration: movie.duration,
         trailerLink: movie.trailerLink,

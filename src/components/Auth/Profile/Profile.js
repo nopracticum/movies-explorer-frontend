@@ -45,6 +45,29 @@ function Profile({ onMenuButtonClick, setLoggedIn }) {
     resetIsActivePreloaderContext,
   } = useContext(PreloaderContext);
 
+  useEffect(() => {
+    const jwt = localStorage.getItem("token");
+
+    if (jwt) {
+      mainApi
+        .getUserInfo(jwt)
+        .then((userData) => {
+          setCurrentUser(userData);
+          // setLoggedIn(true);
+          setUpdatedUserData({ 
+            name: userData.name,
+            email: userData.email,
+          })
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {});
+    } else {
+      // setLoggedIn(false);
+    }
+  }, []);
+
   const handleUpdateButtonClick = () => {
     setShowSubmitButton(true);
     setShowUpdateButton(false);

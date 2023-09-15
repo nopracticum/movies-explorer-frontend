@@ -51,7 +51,7 @@ function App() {
   function handleCheckToken() {
     const jwt = localStorage.getItem("token");
 
-    if (jwt) {
+    if (localStorage) {
       mainApi
         .getUserInfo(jwt)
         .then((userData) => {
