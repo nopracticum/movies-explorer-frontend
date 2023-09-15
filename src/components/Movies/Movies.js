@@ -69,6 +69,7 @@ function Movies({ onMenuButtonClick, searchFilter, errorMessage, setErrorMessage
     }
   }
 
+
   return (
     <div className="page__container">
       <Header onClickMenuButton={onMenuButtonClick}></Header>

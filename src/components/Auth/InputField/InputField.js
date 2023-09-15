@@ -2,7 +2,7 @@ import React from 'react';
 
 import './InputField.css';
 
-function InputField({errorMessage, ...restProps}) {
+function InputField({errorMessage, disabled, ...restProps}) {
   return (
     <div className="input-field">
       <label className="input-field__title input-field__text">{restProps.title}</label>
@@ -11,6 +11,7 @@ function InputField({errorMessage, ...restProps}) {
         required
         
         {...restProps}
+        disabled={ disabled }
       />
       <span className={`input-field__error-message input-field__text ${errorMessage !== '' ? "active" : ""}`}>{errorMessage}</span>
     </div>

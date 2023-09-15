@@ -20,6 +20,7 @@ export const MovieProvider = ({ children }) => {
     );
 
     if (!savedMoviesLocalCopy) {
+
       mainApi
         .getMovieList()
         .then((movieList) => {
@@ -40,6 +41,7 @@ export const MovieProvider = ({ children }) => {
           console.log(error);
         });
     } else {
+  
       setSavedMovies(savedMoviesLocalCopy);
     }
   }
@@ -79,7 +81,6 @@ export const MovieProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    setSavedMovies([]);
     setMovies([]);
   }, []);
 

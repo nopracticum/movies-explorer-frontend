@@ -11,15 +11,10 @@ import { SearchContext } from "../../contexts/SearchContext";
 
 
 function SavedMovies({ onRowsCounter, rows, onMenuButtonClick, errorMessage, setErrorMessage, searchFilter }) {
-  const {savedMovies, removeSavedMovie, downloadSavedMovies } = useContext(MovieContext);
+  const {savedMovies, removeSavedMovie } = useContext(MovieContext);
   const {searchTermSavedMovies, setSearchTermSavedMovies} = useContext(SearchContext);
   const {switcherModeSaved, setSwitcherModeSaved} = useContext(SearchContext);
   const {setStatePreloader} = useContext(PreloaderContext);
-
-  useEffect(() => {
-    downloadSavedMovies();
-  }, []);
-  
 
   function handleSearch() {
     const optionsData = {
@@ -39,6 +34,7 @@ function SavedMovies({ onRowsCounter, rows, onMenuButtonClick, errorMessage, set
       setStatePreloader(false);
     }
   }
+
 
   return (
     <div className="page__container">

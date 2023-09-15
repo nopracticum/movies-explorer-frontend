@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import logo from '../../../images/search_icon.svg'
 import { useLocation } from "react-router-dom";
 
 import "./SearchForm.css";
 import Switcher from "./Switcher/Switcher";
 import { ERROR_MESSAGE_NOT_KEY_SEARCH } from "../../../utils/constant";
+import { VisibleRowsContext } from "../../../contexts/VisibleRowsContext";
 
 function SearchForm({
   onSearch,
@@ -20,6 +21,17 @@ function SearchForm({
 }) {
   const [errorMessageNotFound, setErrorMessageNotFound] = useState("");
   const location = useLocation();
+
+  const {
+    setCardCount,
+    calculateStartColumnsAndRowsCount,
+  } = useContext(VisibleRowsContext);
+
+  const calculateColumns = () => {
+    const { columns, rows } = calculateStartColumnsAndRowsCount();
+    const requiredCardCount = columns * rows;
+    setCardCount(requiredCardCount);
+  };
 
   function handleCheckboxChange() {
     setSwitcherMode(!switcherMode);
@@ -54,6 +66,7 @@ function SearchForm({
       (searchQuery === "" && !isSaved) ? ERROR_MESSAGE_NOT_KEY_SEARCH : ""
     );
     if (searchQuery !== "" || isSaved) {
+      calculateColumns();
       onSearch();
     }
   };

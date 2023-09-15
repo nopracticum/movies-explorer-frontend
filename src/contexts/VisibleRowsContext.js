@@ -42,12 +42,16 @@ export const VisibleRowsProvider = ({ children }) => {
     setPrevPathname(pathname);
   }, [location.pathname, prevPathname]);
 
-  useEffect(() => {
+  const Initialstate = () => {
     const { columns, rows } = calculateStartColumnsAndRowsCount();
     const requiredCardCount = columns * rows;
     setCardCount(requiredCardCount);
     setVisibleRows(rows);
     setVisibleRowsSaved(rows);
+  }
+  
+  useEffect(() => {
+    Initialstate()
   }, []);
 
   const addRows = () => {
@@ -67,8 +71,9 @@ export const VisibleRowsProvider = ({ children }) => {
   };
 
   const resetRows = () => {
-    setVisibleRows(0);
-    setVisibleRowsSaved(0);
+//   setVisibleRows(0);
+//    setVisibleRowsSaved(0);
+    Initialstate();
   };
 
   return (
