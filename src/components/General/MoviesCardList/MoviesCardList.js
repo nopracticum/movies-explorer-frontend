@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import "./MoviesCardList.css";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import { VisibleRowsContext } from "../../../contexts/VisibleRowsContext";
+import { SCREEN_WIDTH } from "../../../utils/constant";
 
 function MoviesCardList({ movies, isActive, loadMoreButtomMove }) {
   const {
     addRows,
     cardCount,
     setCardCount,
-    calculateStartColumnsAndRowsCount,
   } = useContext(VisibleRowsContext);
   const [visibleCards, setVisibleCards] = useState([]);
 
@@ -16,7 +16,17 @@ function MoviesCardList({ movies, isActive, loadMoreButtomMove }) {
     const { columns, rows } = calculateStartColumnsAndRowsCount();
     const requiredCardCount = columns * rows;
     setCardCount(requiredCardCount);
+    console.log();
   };
+
+  const calculateStartColumnsAndRowsCount = () => {
+    if (window.innerWidth >= 1280) return { columns: 4, rows: 4 };
+    if (window.innerWidth >= 1028) return { columns: 3, rows: 4 };
+    if (window.innerWidth >= 768) return { columns: 2, rows: 4 };
+    if (window.innerWidth >= 480) return { columns: 2, rows: 2.5 };
+    return { columns: 2, rows: 2.5 };
+  };
+
 
   useEffect(() => {
     calculateColumns(); 

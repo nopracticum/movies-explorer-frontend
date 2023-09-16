@@ -25,6 +25,7 @@
     row-gap: 32px;
     column-gap: 20px;
     justify-content: space-between;
+    justify-items: center;
     grid-auto-flow: dense;
     grid-auto-columns: 270px;
     list-style-type: none;

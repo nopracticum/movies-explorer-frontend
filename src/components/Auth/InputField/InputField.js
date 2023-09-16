@@ -11,7 +11,7 @@ function InputField({errorMessage, disabled, ...restProps}) {
         required
         
         {...restProps}
-        disabled={ disabled }
+        disabled={disabled}
       />
       <span className={`input-field__error-message input-field__text ${errorMessage !== '' ? "active" : ""}`}>{errorMessage}</span>
     </div>
