@@ -13,7 +13,7 @@ const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 const SCREEN_WIDTH = {
 	LARGE: window.innerWidth >= 1280,
-	TABLET: window.innerWidth >= 1028,
+	TABLET: window.innerWidth >= 990,
 	TABLET_SMALL: window.innerWidth >= 730,
 	MOBILE: window.innerWidth >= 480,
 }
