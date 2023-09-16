@@ -12,10 +12,10 @@ const SHORT_MOVIE_DURATION = 40;
 const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 
 const SCREEN_WIDTH = {
-	LARGE: (window.innerWidth >= 1280),
-	TABLET: (window.innerWidth >= 1028),
-	TABLET_SMALL: (window.innerWidth >= 768),
-	MOBILE: (window.innerWidth >= 480),
+	LARGE: window.innerWidth >= 1280,
+	TABLET: window.innerWidth >= 1028,
+	TABLET_SMALL: window.innerWidth >= 768,
+	MOBILE: window.innerWidth >= 480,
 }
 
 module.exports = {
