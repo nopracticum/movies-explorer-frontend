@@ -21,8 +21,8 @@ export const VisibleRowsProvider = ({ children }) => {
 
   const calculateStartColumnsAndRowsCount = () => {
     if (window.innerWidth >= 1280) return { columns: 4, rows: 4 };
-    if (window.innerWidth >= 1028) return { columns: 3, rows: 4 };
-    if (window.innerWidth >= 768) return { columns: 2, rows: 4 };
+    if (window.innerWidth >= 988) return { columns: 3, rows: 4 };
+    if (window.innerWidth >= 730) return { columns: 2, rows: 4 };
     if (window.innerWidth >= 480) return { columns: 2, rows: 2.5 };
     return { columns: 2, rows: 2.5 };
   };
