@@ -91,8 +91,6 @@ function SavedMovies({ onRowsCounter, rows, onMenuButtonClick, errorMessage, set
     }
   }
 
-
-
   useEffect(() => {
     setSavedMovieList(savedMovies);
   }, [savedMovies])
