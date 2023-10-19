@@ -7,9 +7,7 @@ import { useFormAndValidation } from "../../../hooks/useFormAndValidation";
 import { profileEditSuccessMessage } from "../../../utils/constants";
 import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 
-function Profile({ onUpdateUser, isMenuOpen, onClosePopup, onOpenPopup, onSignOut, message, isLoading }) {
-    const currentUser = React.useContext(CurrentUserContext);
-
+function Profile({ currentUser, onUpdateUser, isMenuOpen, onClosePopup, onOpenPopup, onSignOut, message, isLoading }) {
     const initialState = { name: '' };
     const { values, handleChange, errors, isValid, setValues, resetForm } = useFormAndValidation(initialState, currentUser.name);
     const [isEdit, setIsEdit] = React.useState(false);
@@ -32,6 +30,7 @@ function Profile({ onUpdateUser, isMenuOpen, onClosePopup, onOpenPopup, onSignOu
         }
     }, [message, isShowMessage]);
 
+    // при переключении на режим редактирования, сообщение должно пропасть
     React.useEffect(() => {
         if (isEdit) {
             setFormMessage('');

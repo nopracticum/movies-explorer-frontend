@@ -11,7 +11,7 @@ import ProtectedRoute from "../ProtectedRoute.js/ProtectedRoute.js";
 import { moviesApi } from "../../utils/MoviesApi.js";
 import { mainApi } from "../../utils/MainApi.js";
 import { currentUser, CurrentUserContext } from "../../contexts/CurrentUserContext.js";
-import { initialCardsLength1280, initialCardsLength320, initialCardsLength768, longTimeout, moviesApiBaseUrl, profileEditSuccessMessage, rowLength1280, rowLength320, rowLength768, shortFilmDuration, shortTimeout } from "../../utils/constants.js";
+import { initialCardsLength1280, initialCardsLength320, initialCardsLength768, longTimeout, moviesApiBaseUrl, profileEditSuccessMessage, rowLength1280, rowLength320, rowLength768, shortFilmDuration, shortTimeout} from "../../utils/constants.js";
 
 function App() {
     const [currentUserState, setCurrentUser] = React.useState(currentUser);
