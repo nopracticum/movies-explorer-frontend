@@ -1,0 +1,130 @@
+.nav-movie {
+    width: calc(100% - 80px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    color: #000;
+}
+
+.nav-movie__links {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-movie__link {
+    color: #000;
+    text-align: right;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-movie__link-item {
+    margin: 0 0 0 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-movie__link_color_white {
+    color: #fff;
+}
+
+.nav-movie__link_bold {
+    text-align: right;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 18px;
+}
+
+.nav-movie__link:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.profile-link {
+    font-family: Inter;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #F9F9F9; /*унифицироваь цвет*/
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    text-decoration: none;
+    color: black; /*унифицировать цвет*/
+}
+
+.profile-link_bold {
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.profile-link_color_white {
+    color: #fff;
+}
+
+.profile-link:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.nav-movie__btn {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M36 14L8 14V11L36 11V14Z" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M36 24L8 24V21L36 21V24Z" fill="black"/><path fill-rule="evenodd" clip-rule="evenodd" d="M36 34L8 34V31L36 31V34Z" fill="black"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+}
+
+.nav-movie__btn:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-movie__links {
+        display: none;
+    }
+
+    .profile-link {
+        display: none;
+    }
+
+    .nav-movie {
+        width: auto;
+    }
+
+    .nav-movie__btn {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav-movie__btn {
+        width: 40px;
+        height: 43px;
+    }
+}
