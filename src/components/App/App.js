@@ -2,30 +2,16 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Main from "../Main/Main.js";
 import Movies from "../Movies/Movies.js";
-import SavedMovies from "../Movies/SavedMovies/SavedMovies.js";
-import Register from "../Auth/Register/Register.js";
-import Login from "../Auth/Login/Login.js";
-import Profile from "../Auth/Profile/Profile.js";
+import SavedMovies from "../SavedMovies/SavedMovies.js";
+import Register from "../Register/Register.js";
+import Login from "../Login/Login.js";
+import Profile from "../Profile/Profile.js";
 import PageNotFound from "../PageNotFound/PageNotFound.js";
 import ProtectedRoute from "../ProtectedRoute.js/ProtectedRoute.js";
 import { moviesApi } from "../../utils/MoviesApi.js";
 import { mainApi } from "../../utils/MainApi.js";
 import { currentUser, CurrentUserContext } from "../../contexts/CurrentUserContext.js";
-import {
-    initialCardsLength1280,
-    initialCardsLength320,
-    initialCardsLength768,
-    longTimeout,
-    moviesApiBaseUrl,
-    profileEditSuccessMessage,
-    rowLength1280,
-    rowLength320,
-    rowLength768,
-    shortFilmDuration,
-    shortTimeout,
-    windowWidthWide,
-    windowWidthNarrow,
-} from "../../utils/constants.js";
+import { initialCardsLength1280, initialCardsLength320, initialCardsLength768, longTimeout, moviesApiBaseUrl, profileEditSuccessMessage, rowLength1280, rowLength320, rowLength768, shortFilmDuration, shortTimeout } from "../../utils/constants.js";
 
 function App() {
     const [currentUserState, setCurrentUser] = React.useState(currentUser);
@@ -59,12 +45,13 @@ function App() {
                 console.error(err);
             });
     }
-
+    
     const handleRegisterUser = (email, password, name) => {
         setIsLoading(true);
         mainApi.register(name, email, password)
             .then(res => {
                 setMessage('');
+                // авторизация и перенаправление на Фильмы
                 handleLoginUser(email, password);
             }).catch(err => {
                 setMessage(err === 'Ошибка: 409' ?
@@ -80,6 +67,8 @@ function App() {
         mainApi.login(email, password)
             .then(res => {
                 setMessage('');
+                // токен создан и записан в куки
+                // валидируем токен
                 handleValidateToken();
                 getInitialCards()
             }).catch(err => {
@@ -137,8 +126,8 @@ function App() {
                 setMenuOpen(false);
                 setIsLoading(false);
                 setMessage('');
-                setRowLength(rowLength1280);
-                setInitialCardsLength(initialCardsLength1280);
+                setRowLength(3);
+                setInitialCardsLength(12);
                 setIsLastRow(false);
                 setKeyword('');
                 setIsShortFilm(false);
@@ -383,10 +372,10 @@ function App() {
 
     // корректное отображение ряда карточек
     React.useEffect(() => {
-        if (windowWidth > windowWidthWide) {
+        if (windowWidth > 1087) {
             setInitialCardsLength(initialCardsLength1280);
             setRowLength(rowLength1280);
-        } else if (windowWidth > windowWidthNarrow) {
+        } else if (windowWidth > 688) {
             setInitialCardsLength(initialCardsLength768);
             setRowLength(rowLength768);
         } else {
@@ -432,6 +421,7 @@ function App() {
                         element={
                             <ProtectedRoute
                                 element={Movies}
+                                loggedIn={currentUserState}
                                 isMenuOpen={isMenuOpen}
                                 onClosePopup={closePopup}
                                 onOpenPopup={handleMenuClick}
@@ -452,6 +442,7 @@ function App() {
                         element={
                             <ProtectedRoute
                                 element={SavedMovies}
+                                loggedIn={currentUserState}
                                 isMenuOpen={isMenuOpen}
                                 onClosePopup={closePopup}
                                 onOpenPopup={handleMenuClick}
@@ -490,11 +481,13 @@ function App() {
                         element={
                             <ProtectedRoute
                                 element={Profile}
+                                loggedIn={currentUserState}
                                 isMenuOpen={isMenuOpen}
                                 onClosePopup={closePopup}
                                 onOpenPopup={handleMenuClick}
                                 onUpdateUser={handleUpdateUser}
                                 message={message}
+                                currentUser={currentUserState}
                                 onSignOut={handleSignOut}
                                 isLoading={isLoading}
                             />
