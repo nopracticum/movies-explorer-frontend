@@ -1,6 +1,6 @@
-export const mainApiBaseUrl = "http://localhost:3001";
+export const mainApiBaseUrl = "https://api.nomoremoviesexplorer.nomoredomainsicu.ru";
 
-export const moviesApiBaseUrl = "https://api.nomoremoviesexplorer.nomoredomainsicu.ru";
+export const moviesApiBaseUrl = "https://api.nomoreparties.co";
 export const beatfilmApiBaseUrl = "https://api.nomoreparties.co/beatfilm-movies";
 
 export const profileEditSuccessMessage = "Информация о профиле успешно обновлена";
