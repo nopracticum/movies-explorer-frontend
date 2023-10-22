@@ -1,5 +1,4 @@
 export const mainApiBaseUrl = "https://api.nomoremoviesexplorer.nomoredomainsicu.ru";
-
 export const moviesApiBaseUrl = "https://api.nomoreparties.co";
 export const beatfilmApiBaseUrl = "https://api.nomoreparties.co/beatfilm-movies";
 
