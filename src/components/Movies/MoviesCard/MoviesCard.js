@@ -1,6 +1,6 @@
 import React from "react";
 import "./MoviesCard.css";
-import { moviesApiBaseUrl } from "../../../utils/constants";
+import { movies_Api } from "../../../utils/constants";
 import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
 
 function MoviesCard({ card, savedCards, isSavedMovies, onCardLike }) {
@@ -25,7 +25,7 @@ function MoviesCard({ card, savedCards, isSavedMovies, onCardLike }) {
         card &&
         <article className="movies-card" key={card.id ? card.id : card._id}>
             <a className="movies-card__link" href={card.trailerLink} target="blank">
-            <img className="movies-card__image" src={card.image?.url ? moviesApiBaseUrl + card.image.url : card.image} alt={card.nameRU} />
+            <img className="movies-card__image" src={card.image?.url ? movies_Api + card.image.url : card.image} alt={card.nameRU} />
             </a>
             <div className="movies-card__container">
             <div className="movies-card__wrapper">

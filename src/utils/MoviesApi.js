@@ -1,5 +1,5 @@
 /** API */
-import { beatfilmApiBaseUrl } from "./constants";
+import { beatfilm_Api } from "./constants";
 
 class Api {
     constructor({ baseUrl, headers }) {
@@ -29,7 +29,7 @@ class Api {
 }
 
 export const moviesApi = new Api({
-    baseUrl: beatfilmApiBaseUrl,
+    baseUrl: beatfilm_Api,
     headers: {
         'Content-Type': 'application/json'
     }

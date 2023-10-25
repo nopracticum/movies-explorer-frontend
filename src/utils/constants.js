@@ -1,11 +1,8 @@
-export const mainApiBaseUrl = "https://api.nomoremoviesexplorer.nomoredomainsicu.ru";
-export const moviesApiBaseUrl = "https://api.nomoreparties.co";
-export const beatfilmApiBaseUrl = "https://api.nomoreparties.co/beatfilm-movies";
+export const Base_Url = "https://api.nomoremoviesexplorer.nomoredomainsicu.ru";
+export const movies_Api = "https://api.nomoreparties.co";
+export const beatfilm_Api = "https://api.nomoreparties.co/beatfilm-movies";
 
 export const profileEditSuccessMessage = "Информация о профиле успешно обновлена";
-
-export const windowWidthWide = 1087;
-export const windowWidthNarrow = 688;
 
 export const initialCardsLength1280 = 16;
 export const initialCardsLength1279 = 12;
