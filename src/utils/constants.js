@@ -7,9 +7,9 @@ export const profileEditSuccessMessage = "Информация о профиле
 export const windowWidthWide = 1087;
 export const windowWidthNarrow = 688;
 
-export const initialCardsLength1280 = 18;
+export const initialCardsLength1280 = 16;
 export const initialCardsLength1279 = 12;
-export const initialCardsLength768 = 9;
+export const initialCardsLength768 = 8;
 export const initialCardsLength320 = 5;
 
 export const rowLength1280 = 4;
