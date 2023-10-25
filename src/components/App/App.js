@@ -11,7 +11,7 @@ import ProtectedRoute from "../ProtectedRoute.js/ProtectedRoute.js";
 import { moviesApi } from "../../utils/MoviesApi.js";
 import { mainApi } from "../../utils/MainApi.js";
 import { currentUser, CurrentUserContext } from "../../contexts/CurrentUserContext.js";
-import { initialCardsLength1280, initialCardsLength320, initialCardsLength768, longTimeout, moviesApiBaseUrl, profileEditSuccessMessage, rowLength1280, rowLength320, rowLength768, shortFilmDuration, shortTimeout} from "../../utils/constants.js";
+import { initialCardsLength1280, initialCardsLength320, initialCardsLength768, initialCardsLength1279, longTimeout, moviesApiBaseUrl, profileEditSuccessMessage, rowLength1280, rowLength320, rowLength768, rowLength1279, shortFilmDuration, shortTimeout} from "../../utils/constants.js";
 
 function App() {
     const [currentUserState, setCurrentUser] = React.useState(currentUser);
@@ -372,10 +372,13 @@ function App() {
 
     // корректное отображение ряда карточек
     React.useEffect(() => {
-        if (windowWidth > 1087) {
+        if (windowWidth >= 1280) {
             setInitialCardsLength(initialCardsLength1280);
             setRowLength(rowLength1280);
-        } else if (windowWidth > 688) {
+        } else if (windowWidth > 990) {
+            setInitialCardsLength(initialCardsLength1279);
+            setRowLength(rowLength1279);
+        } else if (windowWidth >  730) {
             setInitialCardsLength(initialCardsLength768);
             setRowLength(rowLength768);
         } else {

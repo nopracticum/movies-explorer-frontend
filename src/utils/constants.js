@@ -7,12 +7,14 @@ export const profileEditSuccessMessage = "Информация о профиле
 export const windowWidthWide = 1087;
 export const windowWidthNarrow = 688;
 
-export const initialCardsLength1280 = 12;
+export const initialCardsLength1280 = 18;
+export const initialCardsLength1279 = 12;
 export const initialCardsLength768 = 9;
 export const initialCardsLength320 = 5;
 
 export const rowLength1280 = 4;
-export const rowLength768 = 3;
+export const rowLength1279 = 3;
+export const rowLength768 = 2;
 export const rowLength320 = 2;
 
 export const shortFilmDuration = 40;
