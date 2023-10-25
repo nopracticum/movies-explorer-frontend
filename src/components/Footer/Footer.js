@@ -1,36 +1,19 @@
 import React from "react";
-
 import "./Footer.css";
 
-export default function Footer() {
-  return (
-    <footer className="footer">
-      <div className="footer__info">
-      <p className="footer__title footer__title_underline">
-        Учебный проект Яндекс.Практикум х BeatFilm.
-      </p>
-      <div className="footer__container">
-        <p className="footer__copyright">© {new Date().getFullYear()}</p>
-        <nav className="footer__nav">
-          <a
-            className="footer__link"
-            href="https://practicum.yandex.ru/"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Яндекс.Практикум
-          </a>
-          <a
-            className="footer__link"
-            href="https://github.com/nopracticum"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Github
-          </a>
-        </nav>
-      </div>
-      </div>
-    </footer>
-  );
+function Footer() {
+    return (
+        <footer className="footer">
+            <p className="footer__text">Учебный проект Яндекс.Практикум х BeatFilm.</p>
+            <div className="footer__content">
+                <p className="footer__copyright">&#169; {new Date().getFullYear()}</p>
+                <ul className="footer__links">
+                    <li className="footer__link-item"><a href="https://practicum.yandex.ru/" target="blank" className="footer__link">Яндекс.Практикум</a></li>
+                    <li className="footer__link-item"><a href="https://github.com/nopracticum" target="blank" className="footer__link">Github</a></li>
+                </ul>
+            </div>
+        </footer>
+    );
 }
+
+export default Footer;

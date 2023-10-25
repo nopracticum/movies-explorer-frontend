@@ -1,0 +1,120 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__label {
+    display: block;
+    color: #A0A0A0;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.form__input {
+    display: block;
+    width: calc(100% - 30px);
+    border-radius: 8px;
+    background: #F9F9F9;
+    border: none;
+    outline: none;
+    color: #000;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 15px;
+    margin: 10px 0 0;
+}
+
+.form__input-error-text {
+    color: var( --text-color-red);
+}
+
+.form__input-error {
+    display: block;
+    color: var( --text-color-red);
+    font-family: Inter;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px 0 0;
+    padding: 0;
+}
+
+.form__message {
+    color: #FF004C;
+    text-align: center;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 0 20px;
+    margin: 100px 0 0;
+}
+
+.form__message_margin_large {
+    margin: 170px 0 0;
+}
+
+.form__save-btn {
+    text-align: center;
+    font-family: Inter;
+    border-radius: 3px;
+    background: #F8F8F8;
+    color: #C2C2C2;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    padding: 14px;
+    margin: 0;
+}
+
+.form__save-btn_active {
+    color: #FFF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: #FF6838;
+}
+
+.form__save-btn_active:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    .form__input {
+        padding: 15px;
+    }
+
+    .form__message {
+        margin: 157px 0 0;
+    }
+
+    .form__save-btn {
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .form__message_margin_large {
+        margin: 258px 0 0;
+    }
+}
